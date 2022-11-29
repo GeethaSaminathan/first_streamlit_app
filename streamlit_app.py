@@ -1,4 +1,5 @@
 import streamlit
-streamlit.title("My family is my world")
-streamlit.header("good vibes of my family is peace")
-streamlit.text("Happy,love,playing,fighting,interacting")
+streamlit.header('Breakfast Menu')
+streamlit.text('Omega 3 & Blueberry Oatmeal')
+streamlit.text('Kale, Spinach & Rocket Smoothie')
+streamlit.text('Hard-Boiled Free-Range Egg')
