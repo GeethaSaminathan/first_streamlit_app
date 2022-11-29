@@ -8,6 +8,6 @@ my_fruits_list = pandas.read_csv("https://uni-lab-files.s3.us-west-2.amazonaws.c
 # lets put a pick list 
 streamlit.multiselect("Pick fruits:", list(my_fruits_list.index))
 #changing number to fruits name
-my_fruit_list = my_fruit_list.set_index('Fruit')
+my_fruits_list = my_fruits_list.set_index('Fruit')
 
 streamlit.dataframe(my_fruits_list)
