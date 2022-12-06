@@ -7,3 +7,12 @@ my_fruits_list = my_fruits_list.set_index('Fruit')
 fruits_selected=streamlit.multiselect("Pick fruits:", list(my_fruits_list.index),['Avocado','Strawberries'])
 fruits_to_show = my_fruits_list.loc[fruits_selected]
 streamlit.dataframe(fruits_to_show)
+
+
+
+#NEW SECTION TO DISPLAY FRUITYVICE API RESPONSE
+streamlit.header("Fruityvice Fruit Advice!")
+
+import requests
+fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
+streamlit.text(fruityvice_response)
