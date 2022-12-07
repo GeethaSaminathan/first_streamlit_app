@@ -1,4 +1,10 @@
 #requirements.txt
+plotly
+scipy
+pandas
+Flask
+flask-cors
+pyforest
 snowflake-connector-python
 
 import snowflake.connector
