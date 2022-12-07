@@ -12,12 +12,14 @@ fruits_selected = streamlit.multiselect("Pick fruits:", list(my_fruits_list.inde
 fruits_to_show = my_fruits_list.loc[fruits_selected]
 #display the table on the page
 streamlit.dataframe(fruits_to_show)
-
 #create function
 def get_fruityvice_data(this_fruit_choice):
   fruityvice_response = requests.get("https://fruityvice.com/api/fruit/"+fruit_choice)
   fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
   return fruityvice_normalized
+# activating warehouse
+my_cur.execute("use warehouse pc_rivery_wh")
+
 
 #NEW SECTION TO DISPLAY FRUITYVICE API RESPONSE
 streamlit.header("Fruityvice Fruit Advice!")
@@ -30,8 +32,7 @@ try:
       streamlit.dataframe(back_from_function)
 except URLError as e:
       streamlit.error()
-
- #function to load list into a single button
+#function to load list into a single button
 streamlit.header("The FRUIT LIST contains:")
 #snowflake related function
 def get_fruit_load_list():
@@ -43,7 +44,6 @@ if streamlit.button('Get FRUIT LOAD LIST'):
   my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
   my_data_rows = get_fruit_load_list()
   streamlit.dataframe(my_data_rows)
-
 #adding second text to streamlit
 def insert_row_snowflake(new_fruit):
   with my_cnx.cursor() as my_cur:
@@ -59,5 +59,4 @@ if streamlit.button('Add a fruit to the List'):
 
 # stopping tempor
 streamlit.stop()
-my_cur.execute("use warehouse pc_rivery_wh")
 
