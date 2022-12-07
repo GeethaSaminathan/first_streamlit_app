@@ -56,7 +56,8 @@ if streamlit.button('Add a fruit to the List'):
   back_from_function = insert_row_snowflake(add_my_fruit)
   streamlit.text(back_from_function)
 
-my_cur.execute("use warehouse pc_rivery_wh")
 
 # stopping tempor
 streamlit.stop()
+my_cur.execute("use warehouse pc_rivery_wh")
+
