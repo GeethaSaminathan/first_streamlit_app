@@ -11,7 +11,7 @@ my_fruits_list = my_fruits_list.set_index('Fruit')
 fruits_selected = streamlit.multiselect("Pick fruits:", list(my_fruits_list.index))
 fruits_to_show = my_fruits_list.loc[fruits_selected]
 streamlit.dataframe(fruits_to_show)
-streamlit.write('Thanks for adding ',fruits_to_show)
+streamlit.write('Thanks for adding ' + fruits_selected)
 #NEW SECTION TO DISPLAY FRUITYVICE API RESPONSE
 streamlit.header("Fruityvice Fruit Advice!")
 fruit_choice = streamlit.text_input('What fruit would you like information about?','Kiwi')
