@@ -1,12 +1,11 @@
 #requirements.txt
-plotly
-scipy
-pandas
-Flask
-flask-cors
-pyforest
+matplotlib==3.5.2
+streamlit==1.10.0
+pandas==1.4.2
+pillow==9.1.1
+numpy==1.22.4
 snowflake-connector-python
-
+python -m pip install --upgrade pip
 import snowflake.connector
 
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
