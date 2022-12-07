@@ -17,8 +17,7 @@ def get_fruityvice_data(this_fruit_choice):
   fruityvice_response = requests.get("https://fruityvice.com/api/fruit/"+fruit_choice)
   fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
   return fruityvice_normalized
-# activating warehouse
-my_cur.execute("use warehouse pc_rivery_wh")
+
 
 
 #NEW SECTION TO DISPLAY FRUITYVICE API RESPONSE
@@ -55,7 +54,8 @@ if streamlit.button('Add a fruit to the List'):
   my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
   back_from_function = insert_row_snowflake(add_my_fruit)
   streamlit.text(back_from_function)
-
+# activating warehouse
+streamlit.execute("use warehouse pc_rivery_wh")
 
 # stopping tempor
 streamlit.stop()
