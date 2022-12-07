@@ -1,16 +1,6 @@
 #requirements.txt
-matplotlib==3.5.2
-streamlit==1.10.0
-pandas==1.4.2
-pillow==9.1.1
-numpy==1.22.4
+python3 -m pip install --no-use-pep517 
 snowflake-connector-python
-python -m pip install --upgrade pip
 import snowflake.connector
 
-my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
-my_cur = my_cnx.cursor()
-my_cur.execute("SELECT CURRENT_USER(), CURRENT_ACCOUNT(), CURRENT_REGION()")
-my_data_row = my_cur.fetchone()
-streamlit.text("Hello from Snowflake:")
-streamlit.text(my_data_row)
+
