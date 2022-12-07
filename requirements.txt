@@ -1,5 +1,5 @@
 #requirements.txt
 snowflake-connector-python
-'/home/appuser/venv/bin/python -m pip install --upgrade pip'
+python -m pip install --upgrade pip'
 #import snowflake.connector
 
