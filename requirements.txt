@@ -1,7 +1,4 @@
 #requirements.txt
 snowflake-connector-python
 import snowflake.connector
-charset-normalizer==2.0.12
-snowflake-connector-python==2.7.9
-'pyarrow<8.1.0,>=8.0.0; 
- extra == "pandas"'
+
