@@ -1,5 +1,6 @@
 import streamlit
 import pandas 
+import snowflake.connector
 my_fruits_list = pandas.read_csv("https://uni-lab-files.s3.us-west-2.amazonaws.com/dabw/fruit_macros.txt")
 #changing number to fruits name
 my_fruits_list = my_fruits_list.set_index('Fruit')
